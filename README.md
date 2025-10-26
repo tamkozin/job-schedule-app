@@ -15,7 +15,7 @@
 
 ## データ構造, ER図（MVP段階）
 
-![alt text](ER図0.png)
+![ER図0.png](./ER/ER図0.png)
 
 ## 画面構成
 
