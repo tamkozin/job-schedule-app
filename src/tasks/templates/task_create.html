@@ -7,13 +7,11 @@
     </head>
     <body>
         <div class="container">
-        <h2>ログイン</h2>
+        <h2>タスク作成</h2>
         <form method='POST'>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">ログイン</button>
+        <button type="submit">登録</button>
         </form>
-        <a href = "{% url 'register' %}">新規登録</a>
-        
     </body>
 </html>
