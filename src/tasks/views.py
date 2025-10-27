@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import TaskForm
 from .models import Task
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def task_list(request):
-    tasks = Task.objects.fileter(user=request.user)
+    tasks = Task.objects.filter(user=request.user)
     return render(request, 'task_list.html', {'tasks': tasks})
 
 def task_create(request):
@@ -30,5 +32,5 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
 
-def task_list(request):
-    return render(request, 'task_list.html')
+def index(request):
+    return render(request, 'index.html')
