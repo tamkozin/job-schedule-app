@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="ja" >
-    <head>        
-        {% load static %}
-        <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 新規登録 {% endblock %}
+
+{% block content %}
     <body>
-        <div class="container">
         <h2>新規登録</h2>
         <form method='POST'>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">登録</button>
         </form>
-        <a href = "{% url 'login' %}">ログインへ</a>
-        
     </body>
-</html>
+{% endblock %}

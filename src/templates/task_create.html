@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja" >
-    <head>        
-        {% load static %}
-        <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-        <div class="container">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create_task{% endblock %}
+
+{% block content %}
         <h2>タスク作成</h2>
         <form method='POST'>
         {% csrf_token %}
@@ -15,4 +11,4 @@
         <button type="submit" class = "btn btn-primary">登録</button>
         </form>
     </body>
-</html>
+{% endblock %}

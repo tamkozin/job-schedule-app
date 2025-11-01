@@ -22,7 +22,6 @@ class Task(models.Model):
         default = Status.APPLIED
     )
     deadline = models.DateField(default=timezone.now)
-    notes = models.TextField(blank=True)
 
     def __str__(self):
         return self.title

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} Job Schedule {% endblock %}</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+    </head>
+    <body class="bg-dark text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Job Schedule</a>
+
+                <div class="d-flex ms-auto">
+                    {% if user.is_authenticated %}
+                        <span class="navbar-text me-2">
+                            {{ user.username}} さん
+                        </span>
+                        <form method="post" action="{% url 'logout' %}"" sytle="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-secondary">ログアウト</a>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'register' %}" class="btn btn-outline-secondary me-2">新規登録</a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-secondary ms-2">ログイン</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        <main class="container mt-4">
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
