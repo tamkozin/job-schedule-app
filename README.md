@@ -45,6 +45,8 @@
 
 ## セットアップ方法
 
+### 1. ローカル開発環境での手順
+
 1. 仮想環境の作成と起動
 ```sh
 python -m venv venv
@@ -65,4 +67,17 @@ python manage.py migrate
 ```sh
 python manage.py runserver
 ```
+
+### 2. Dockerでの開発手順
+
+1. Dockerイメージビルド
+```sh
+docker build -t job-schedule-app:latest -f dockerfile .
+```
+
+2. 開発サーバー起動
+```sh
+docker run -p 8000:8000 job-schedule-app:latest
+```
+
 
