@@ -6,6 +6,7 @@ from django.utils import timezone
 class Task(models.Model):
     class Status(models.TextChoices):
         APPLIED = 'AP', 'エントリー'
+        JOBFAIR = 'JF', '企業説明会'
         WEBEXAM = 'WE', 'Webテスト'
         WAITING = 'WT', 'メール待ち'
         INTERVIEW = 'IN', '面接'

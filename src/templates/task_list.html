@@ -14,8 +14,9 @@
                 <div class="d-flex align-items-center">
                     <span class="me-3 fw-bold text-info" style="min-width:50px;">
                         {{ task.deadline|date:"m/d" }}
-                    </span>
+                    </span> 
                     <span>{{ task.title }}</span>
+                    <span class="ms-5">({{ task.get_status_display }})</span>
                 </div>
 
                 <form action="{% url 'task_delete' task.pk %}" method="POST" class="m-0 p-0">
