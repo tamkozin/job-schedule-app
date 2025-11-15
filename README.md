@@ -2,7 +2,8 @@
 
 ## 目的
 
-就活のタスクを管理し、進捗を可視化できる。
+就活のタスクを管理し、進捗を可視化できるアプリをDjangoを用いて開発をする。
+留学中のDevOpsの授業で習った技術を中心に、アウトプットを意識して作成をした。
 
 ## 機能　(MVP段階)
 
@@ -23,7 +24,6 @@
 - ユーザログイン画面
 - タスク一覧画面
 - タスク追加画面
-
 ## 使用技術
 
 |カテゴリ|技術|
@@ -31,15 +31,13 @@
 |フレームワーク|Django(Python)|
 |データベース|SQlite3|
 |フロントエンド|HTML / CSS / Bootstrap|
-|認証| Django Auth|
-
+|環境| Docker / Docker-
 
 ## 拡張機能
 
 - カレンダー表示
 - 企業のグループ化
 - ポップアップ通知機能
-- Docker対応
 - タスク完了チェックボックス
 - 単体テスト / 統合テスト追加
 
@@ -70,14 +68,13 @@ python manage.py runserver
 
 ### 2. Dockerでの開発手順
 
-1. Dockerイメージビルド
+1. Dockerイメージのビルド、コンテナの起動
 ```sh
-docker build -t job-schedule-app:latest -f dockerfile .
+docker-compose up -d --build
 ```
 
-2. 開発サーバー起動
+2. Dockerコンテナストップ
 ```sh
-docker run -p 8000:8000 job-schedule-app:latest
+docker-compose down
 ```
-
 
