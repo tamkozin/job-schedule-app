@@ -121,6 +121,10 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+# Authentication redirects
+
+LOGIN_URL = 'login/'
+
 LOGIN_REDIRECT_URL = '/tasks/'
 
 LOGOUT_REDIRECT_URL = '/'
